@@ -28,8 +28,6 @@ st.code(
 
     #Guardar la llave del servidor
     uri = 'MONGODB_URI_AQUI'  
-    #La uri esta conformada por mongodb+srv: → //el usuario:la clave → @cluster.mongodb.net
-    #El anterior es un ejemplo de la estructura de la uri omitiendo las flechas y espacios ya que github lo detecta como datos sensibles.
 
     #Conectar con el cluster
     cliente = MongoClient(uri)
