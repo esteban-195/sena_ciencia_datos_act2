@@ -20,5 +20,35 @@ st.markdown("Escribe en la parte de abajo el código que usarías para lograr el
 
 # ESTUDIANTE: Escribe tu código a continuación
 
-
-
+st.code("""
+    import streamlit as st
+    import pandas as pd
+    import firebase_admin
+    from firebase_admin import credentials, firestore
+        
+    #Cargar credenciales desde archivo JSON
+    cred =  credentials.Certificate("llave_secreta.json")
+    
+    #Inicializar la aplicacion Firebase
+    firebase_admin.initialize_app(cred)
+    
+    #Obtener cliente de Firestore
+    db = firestore.client()
+        
+    #Conectarse a la coleccion "vehiculos"
+    coleccion = db.collection("vehiculos")
+        
+    #Traer los documentos
+    documentos = coleccion.stream()
+        
+    #Convertir cada documento a diccionario
+    lista_vehiculos[]
+        
+    for doc in documentos:
+        datos = doc.to_dict()
+        lista_vehiculos.append(datos)
+        
+    df_firebase = pd.Dataframe(lista_vehiculos)
+    st.dataframe(df_firebase)        
+    
+""", language= "python" )

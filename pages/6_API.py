@@ -20,5 +20,16 @@ st.subheader("Tu resultado:")
 # ESTUDIANTE: Escribe tu código a continuación
 # Recuerda usar la librería requests que ya está importada arriba
 
+url_API = "https://pokeapi.co/api/v2/pokemon?limit=10"
+respuesta = requests.get(url_API)
 
 # st.dataframe(...)
+
+if respuesta.status_code == 200:
+    datos_crudos = respuesta.json()
+
+    df_pokemon = pd.DataFrame(datos_crudos)
+    st.write("Diccionario extraido desde la api ↓")
+    st.dataframe(df_pokemon)
+else:
+    st.write(f"Error al extraer los datos: {respuesta.status_code}")

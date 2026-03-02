@@ -18,4 +18,18 @@ st.subheader("Tu resultado:")
 # ESTUDIANTE: Escribe tu código a continuación
 
 
-# st.dataframe(...)
+lista_de_listas = [
+   ["Laptop HP 15", "Tecnología", 2500000, 5],
+   ["Mouse Logitech", "Accesorios", 80000, 20],
+   ["Teclado Mecánico Redragon", "Accesorios", 220000, 15],
+   ["Monitor Samsung 24\"", "Tecnología", 900000, 8],
+   ["Disco Duro Externo 1TB", "Almacenamiento", 300000, 12],
+   ["Memoria USB 64GB", "Almacenamiento", 45000, 30],
+   ["Silla Gamer", "Muebles", 650000, 4],
+   ["Impresora Epson", "Tecnología", 750000, 6],
+   ["Audífonos Sony", "Audio", 180000, 18],
+   ["Router TP-Link", "Redes", 120000, 10]
+]
+
+df_inventario = pd.DataFrame(lista_de_listas, columns=["Nombre del producto", "Categoría", "Precio", "Cantidad en stock"])
+st.dataframe(df_inventario)

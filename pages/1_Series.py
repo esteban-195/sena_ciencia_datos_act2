@@ -19,4 +19,15 @@ st.subheader("Tu resultado:")
 # ESTUDIANTE: Escribe tu código a continuación
 
 
+titulos = pd.Series(["Superman", "Matrix Recargado", "Interstellar","El rey leon"])
+directores = pd.Series(["Richard Donner", "Wachowski", "Christopher Nolan", "Rob Minkoff y Roger Allers"])
+años = pd.Series(["1978","2003","2014","1994"])
+
+df_peliculas = pd.DataFrame({
+    'Título':titulos,
+    'Director':directores,
+    'Año de Estreno':años
+})
+st.dataframe(df_peliculas   )
+
 # st.dataframe(...)

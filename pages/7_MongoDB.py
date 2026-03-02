@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+#from pymongo import MongoClient
 
 st.title("Bases de Datos en la Nube: MongoDB")
 
@@ -19,5 +20,27 @@ st.markdown("Si no tienes la conexión real, escribe tu código usando `st.code(
 
 # ESTUDIANTE: Escribe tu código (o tu st.code teórico) a continuación
 
+st.code(
+"""
+    import streamlit as st
+    import pandas as pd
+    from pymongo import MongoClien
 
+    #Guardar la llave del servidor
+    uri = 'mongodb+srv://tu_usuario:tu_clave@cluster.mongodb.net'
 
+    #Conectar con el cluster
+    cliente = MongoClient(uri)
+
+    #Seleccionar la base de datos
+    db = cliente["Veterinaria"]
+
+    #Seleccionar la coleccion
+    coleccion = db["mascotas"]
+
+    #busca los documentos y los convierte en una lista de diccionarios
+    df_mongo = pd.Dataframe(list(coleccion.find()))
+
+    #Mostrar el dataframe 
+    st.dataframe(df_mongo)""", language="python"
+)
