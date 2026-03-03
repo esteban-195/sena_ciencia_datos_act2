@@ -24,7 +24,7 @@ st.code(
 """
     import streamlit as st
     import pandas as pd
-    from pymongo import MongoClien
+    from pymongo import MongoClient
 
     #Guardar la llave del servidor
     uri = 'MONGODB_URI_AQUI'  
@@ -39,7 +39,7 @@ st.code(
     coleccion = db["mascotas"]
 
     #busca los documentos y los convierte en una lista de diccionarios
-    df_mongo = pd.Dataframe(list(coleccion.find()))
+    df_mongo = pd.DataFrame(list(coleccion.find()))
 
     #Mostrar el dataframe 
     st.dataframe(df_mongo)""", language="python"

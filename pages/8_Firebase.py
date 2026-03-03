@@ -48,7 +48,7 @@ st.code("""
         datos = doc.to_dict()
         lista_vehiculos.append(datos)
         
-    df_firebase = pd.Dataframe(lista_vehiculos)
+    df_firebase = pd.DataFrame(lista_vehiculos)
     st.dataframe(df_firebase)        
     
 """, language= "python" )

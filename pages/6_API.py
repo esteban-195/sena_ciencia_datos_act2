@@ -28,7 +28,10 @@ respuesta = requests.get(url_API)
 if respuesta.status_code == 200:
     datos_crudos = respuesta.json()
 
-    df_pokemon = pd.DataFrame(datos_crudos)
+    lista_pokemon= datos_crudos["results"]
+
+    df_pokemon = pd.DataFrame(lista_pokemon)
+
     st.write("Diccionario extraido desde la api ↓")
     st.dataframe(df_pokemon)
 else:
